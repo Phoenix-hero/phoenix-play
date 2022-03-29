@@ -89,41 +89,12 @@ const Home = ({videos, account}) => {
                     <img src={randomVideo(videos).thumbnail.url}
                          alt={randomVideo(videos).title}/>
                 </div>
-
-                <div className="video-feed">
-                    <Link href="#disney">
-                        <div className="franchise" id="disney">
-                            <Image src={disneyLogo}/>
-                        </div>
-                    </Link>
-                    <Link href="#friends">
-                        <div className="franchise" id="friends">
-                            <Image src={friends}/>
-                        </div>
-                    </Link>
-                    <Link href="#pixar">
-                        <div className="franchise" id="pixar">
-                            <Image src={pixarLogo}/>
-                        </div>
-                    </Link>
-                    <Link href="#nat-geo">
-                        <div className="franchise" id="nat-geo">
-                            <Image src={natgeoLogo}/>
-                        </div>
-                    </Link>
-                    <Link href="#marvel">
-                        <div className="franchise" id="marvel">
-                            <Image src={marvelLogo}/>
-                        </div>
-                    </Link>
-                </div>
-                <Section genre={'Recommended for you'} videos={unSeenVideos(videos)}/>
+                <Section genre={'Latest & Trending'} videos={filterVideos(videos, 'latest')}/>
                 <Section genre={'Action'} videos={filterVideos(videos, 'action')}/>
                 <Section genre={'Fantasy'} videos={filterVideos(videos, 'fantasy')}/>
-                <Section id="Adventure" genre={'Adventure'}
-                         videos={filterVideos(videos, 'adventure')}/>
-                <Section id="Love" genre={'love'} videos={filterVideos(videos, 'love')}/>
-                <Section id="Friends" genre={'Friends'} videos={filterVideos(videos, 'friends')}/>
+                <Section genre={'Drama'} videos={filterVideos(videos, 'drama')}/>
+                <Section id="Adventure" genre={'Adventure'} videos={filterVideos(videos, 'adventure')}/>
+                <Section id="Love" genre={'Love'} videos={filterVideos(videos, 'love')}/>
 
             </div>
         </>
