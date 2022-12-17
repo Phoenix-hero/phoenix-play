@@ -1,10 +1,6 @@
 ## Disney Clone with GraphCMS
 
-This repo is to build a Disney Clone with GraphCMS.
-
-## Creating graphcms account
-
-First, you need to create your GraphCMS Account at https://app.graphcms.com/.
+Clone the repository and create an account in https://hygraph.com/
 
 ## Add a `.env` file
 
@@ -15,11 +11,11 @@ ENDPOINT={your_endpoint}
 
 ## Install packages 
 
-Open the cloned code in any editor (VS code), run `npm i` to install the packages.
+Open the code in any editor, run -> `npm i` to install the packages.
 
-## run
+## Run on Server
 
-To run the development server, trigger the command in terminal -> `npm run dev`
+To run the development server, run -> `npm run dev`
 
 ## Access the application
 Application is accessible at http://localhost:3000
