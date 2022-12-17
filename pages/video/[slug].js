@@ -1,6 +1,7 @@
 import { gql, GraphQLClient } from 'graphql-request'
 import { useState } from 'react';
-import { FcUpLeft } from "react-icons/fc";
+import {FaPlayCircle } from "react-icons/fa";
+import {FaRegArrowAltCircleLeft} from "react-icons/fa";
 export const getServerSideProps = async (pageContext) => {
     const url = process.env.ENDPOINT
     const graphQLClient = new GraphQLClient(url, {
@@ -63,17 +64,17 @@ const Video = ({ video }) => {
         <>
             {!watching && <img className="video-image" src={video.thumbnail.url} alt={video.title}/>}
             {!watching && <div className="info">
-                <p>{video.tags.join(', ')}</p>
-                <p>{video.description}</p>
+                <p className="movieTitle">{video.title}</p>
+                <p className='movieDesc'>{video.description}</p>
                 <button className="button">
-                    <a href="/"><FcUpLeft/></a></button>
+                    <a className='icons'></a></button>
                 <button
                     className="video-overlay"
                     onClick={() => {
                         changeToSeen(video.slug)
                         watching ? setWatching(false): setWatching(true)
                     }}
-                >PLAY</button>
+                ><FaPlayCircle className='icons'/></button>
             </div>}
             {watching && (
                 <video width="100%" controls>
