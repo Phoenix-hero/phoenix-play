@@ -1,7 +1,6 @@
 import { gql, GraphQLClient } from 'graphql-request'
 import { useState } from 'react';
 import {FaPlayCircle } from "react-icons/fa";
-import {FaRegArrowAltCircleLeft} from "react-icons/fa";
 export const getServerSideProps = async (pageContext) => {
     const url = process.env.ENDPOINT
     const graphQLClient = new GraphQLClient(url, {
@@ -66,8 +65,6 @@ const Video = ({ video }) => {
             {!watching && <div className="info">
                 <p className="movieTitle">{video.title}</p>
                 <p className='movieDesc'>{video.description}</p>
-                <button className="button">
-                    <a className='icons'></a></button>
                 <button
                     className="video-overlay"
                     onClick={() => {
